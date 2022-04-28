@@ -1,5 +1,5 @@
 console.log("destroy comment");
 
-$("#<%= dom_id(@comment) %>").fadeOut(1000, function(){
+$("#<%= dom_id(@comment) %>").slideUp(300, function(){
   $(this).remove();
 });
