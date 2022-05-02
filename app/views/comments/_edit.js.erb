@@ -1,0 +1,5 @@
+var edited_comment = $("#<%= dom_id(@comment) %>");
+
+$("#<%= dom_id(@comment) %>").before("<%= j(render 'form', comment: @comment) %>");
+
+edited_comment.hide();

@@ -21,6 +21,10 @@ class CommentsController < ApplicationController
   def edit
     respond_to do |format|
       format.html
+      format.js do
+        render template: "comments/_edit.js.erb"
+      end
+
     end
   end
 
