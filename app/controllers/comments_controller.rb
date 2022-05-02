@@ -53,9 +53,15 @@ class CommentsController < ApplicationController
       if @comment.update(comment_params)
         format.html { redirect_to root_url, notice: "Comment was successfully updated." }
         format.json { render :show, status: :ok, location: @comment }
+        format.js do
+          render template: "comments/_update.js.erb"
+        end
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.js do
+          render template: "comments/_edit.js.erb"
+        end
       end
     end
   end
